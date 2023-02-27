@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from item.models import Category, Item
-from .forms import SignupForm
+from .forms import SignupForm, LoginForm
 
 # Create your views here.
 def index(request):
@@ -43,5 +43,12 @@ def sign_up(request):
         form = SignupForm()
 
     return render(request, "core/signup.html", {
+        "form": form
+    })
+
+def login(request):
+    form = LoginForm()
+
+    return render(request, "core/login.html", {
         "form": form
     })

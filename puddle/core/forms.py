@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
 class SignupForm(UserCreationForm):
@@ -22,5 +22,16 @@ class SignupForm(UserCreationForm):
     }))
 
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={
+        "class": "w-full p-2 outline-none rounded-xl"
+    }))
+
+class LoginForm(AuthenticationForm):
+
+    email = forms.EmailField(widget=forms.EmailInput(attrs={
+        "placeholder": "Ej. email@example.com",
+        "class": "w-full p-2 outline-none rounded-xl"
+    }))
+
+    password = forms.CharField(widget=forms.PasswordInput(attrs={
         "class": "w-full p-2 outline-none rounded-xl"
     }))
