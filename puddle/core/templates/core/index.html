@@ -36,7 +36,7 @@
         <div class="grid grid-cols-3 gap-3">
             {% for item in items %}
                 <div>
-                    <a href="#">
+                    <a href="{% url 'item:detail' item.id %}">
                         <div class="h-[300px] overflow-hidden bg-white">
                             <img class="rounded-t-xl h-full my-2 mx-auto" src="{{ item.image.url }}" alt="{{ item.name }}">
                         </div>
