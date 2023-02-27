@@ -29,3 +29,6 @@ def category_detail(request, category_id):
         "category_name": chosenCategory.name,
         "items": items
     })
+
+def sign_up(request):
+    return render(request, "core/signup.html")
