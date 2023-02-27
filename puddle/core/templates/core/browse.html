@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Navigating
+{% endblock title %}
+
+{% block content %}
+    <h2 class="text-xl font-normal mb-5">
+        Categories
+    </h2>
+
+    <ul class="w-full grid grid-cols-3 gap-2">
+        {% for category in categories %}
+            <li class="w-full text-center p-5 text-2xl font-bold bg-red-500 rounded-md text-white">
+                <a href="/category/{{ category.name }}">
+                    {{ category.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
