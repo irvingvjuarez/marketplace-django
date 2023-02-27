@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    {{ category_name }}
+{% endblock title %}
+
+{% block content %}
+    <h2 class="text-xl font-normal mb-4">
+        {{ category_name }}
+    </h2>
+
+    <section>
+        <ul>
+            {% for item in items %}
+                <li>
+                    <img src="{{MEDIA_URL}} {{ item.image.url }}" alt="{{ item.name }}">
+                    <span>{{ item.name }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock content %}
